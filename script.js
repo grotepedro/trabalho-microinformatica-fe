@@ -34,7 +34,9 @@ function preencherEndereco(data) {
   document.getElementById("cidade").value = data.localidade;
   document.getElementById("estado").value = data.uf;
 }
-// CRIAR USUÁRIO
+// CADASTRO USUÁRIO
+
+//Pega as informações do formulário
 
 function getFormData() {
 
