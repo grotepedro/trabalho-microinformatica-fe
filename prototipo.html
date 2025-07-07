@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Espólios -  Protótipo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+  <!-- Menu de navegação -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">Calculadora de Espólios</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link active" href="index.html">Início</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="sobre.html">Sobre</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="prototipo.html">Protótipo</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="contato.html">Contato</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="cadastro.html">Cadastro</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Conteúdo principal -->
+  <div class="container mt-5">
+    <h1>Protótipo</h1>
+  </div>
+  <div id="dados" class="container mt-5">
+    
+        <div>
+            <h2>Loja</h2> <!--Tabela de Preços dos Recursos-->
+            <form id="formPreco">
+            <table>
+                <tr>
+                    <th>Recurso</th>
+                    <th>Preço</th>
+                </tr>
+                <tr>
+                    <td>Poção de Vida</td> <!--Preço do recurso Poção de Vida-->
+                    <td><input class="form-control value="10" type="number" id="precoPocaoVida" name="Poção de Vida"></td> 
+                </tr>
+                <tr>
+                    <td>Poção de Mana</td> <!--Preço do recurso Poção de Mana-->
+                    <td><input class="form-control value="15" type="number" id="precoPocaoMana" name="Poção de Mana"></td> 
+                </tr>
+                <tr>
+                    <td>Comida</td> <!--Preço do recurso Comida-->
+                    <td><input class="form-control value="3" type="number" id="precoComida" name="Comida"></td> 
+                </tr>
+            </table>
+            </form>
+        </div>
+        
+    
+        <div>
+        <h2>Recursos</h2>
+        <form id="formRecursos">
+            <table>
+                <tr> <!-- Cabeçalho Tabela dos atributos personagens -->
+                    <th>Recurso/Classe</th>
+                    <th>Guerreiro</th>
+                    <th>Arqueiro</th>
+                    <th>Mago</th>
+                    <th>Curandeiro</th> 
+                </tr>
+                <tr>
+                    <td>Poção de Vida</td> <!--Quantidade Vida por personagem-->
+                    <td><input class="form-control value="10 type="number" id="v0"></td>
+                    <td><input class="form-control value="8 type="number" id="v1"></td>
+                    <td><input class="form-control value="5 type="number" id="v2"></td>
+                    <td><input class="form-control value="6 type="number" id="v3"></td>
+                </tr>
+                <tr>
+                    <td>Poção de Mana</td> <!--Tabela Quantidade Mana por personagem-->
+                    <td><input class="form-control value="3 type="number" id="m0"></td>
+                    <td><input class="form-control value="6 type="number" id="m1"></td>
+                    <td><input class="form-control value="10 type="number" id="m2"></td>
+                    <td><input class="form-control value="12 type="number" id="m3"></td>
+                </tr>
+                <tr>
+                    <td>Comida</td> <!--Tabela Quantidade Comida por personagem-->
+                    <td><input class="form-control value="6 type="number" id="c0"></td>
+                    <td><input class="form-control value="5 type="number" id="c1"></td>
+                    <td><input class="form-control value="5 type="number" id="c2"></td>
+                    <td><input class="form-control value="6 type="number" id="c3"></td>
+                </tr>
+    
+            </table>
+        </form>
+        </div>
+        <br>
+        <div>
+            <form id="formEspolios">
+                <table>
+                    <tr>
+                        <th>Espólios</th>
+                    </tr>
+                    <tr>
+                        <td>Moedas de Ouro</td>
+                        <td><input class="form-control type="number id="o0" value="1000" name="Guerreiro"></td>
+                        <td><input class="form-control type="number id="o1" value="800" name="Arqueiro"></td>
+                        <td><input class="form-control type="number id="o2" value="600" name="Mago"></td>
+                        <td><input class="form-control type="number id="o3" value="400" name="Curandeiro"></td>
+                    </tr>
+                    
+                </table>
+            </form>
+        </div>
+        <br>
+        <div class="botao">
+            <input type="button" value="Gerar Relatório da Missão" onclick=gerarRelatorio() class="btn btn-primary">
+        </div>
+    </div>
+        <div class="container mt-5"> <!--Espaço destinado para Imprimir o relatório-->
+            <p id="resultado"></p>
+            <p id="botao"></p>
+        </div>
+
+</body>
+
+<script src="script.js"></script>
+
+</html>
