@@ -36,32 +36,25 @@ function preencherEndereco(data) {
 }
 // CRIAR USUÁRIO
 
-// Constantes que referenciam os elementos do formulário
-const formCadastro = document.getElementById('form-cadastro');
-const nomeInput = document.getElementById('nome');
-const emailInput = document.getElementById('email');
-const cepInput = document.getElementById('cep');
-const logradouroInput = document.getElementById('logradouro');
-const numeroInput = document.getElementById('numeroEndereco');
-const complementoInput = document.getElementById('complemento');
-const cidadeInput = document.getElementById('cidade');
-const estadoInput = document.getElementById('estado');
-const buscarCepBtn = document.getElementById('buscar-cep');
+function getFormData() {
 
-// Constante que coleta todos os valores do formulário
-const obterDadosFormulario = () => {
-  return {
-    nome: nomeInput.value.trim(),
-    email: emailInput.value.trim(),
-    cep: cepInput.value.trim(),
-    endereco: {
-      logradouro: logradouroInput.value.trim(),
-      numero: numeroInput.value.trim(),
-      complemento: complementoInput.value.trim(),
-      cidade: cidadeInput.value.trim(),
-      estado: estadoInput.value.trim()
-    }
-  }
+    const nomeData = document.getElementById("nome").value
+    const emailData = document.getElementById("email").value
+    const cepData = document.getElementById("cep").value
+    const logradouroData = document.getElementById("logradouro").value
+    const numeroEnderecoData = document.getElementById("numeroEndereco").value
+    const complementoData = document.getElementById("complemento").value
+    const cidadeData = document.getElementById("cidade").value
+    const estadoData = document.getElementById("estado").value
+    
+    console.log(nomeData)
+    console.log(emailData)
+    console.log(cepData)
+    console.log(logradouroData)
+    console.log(numeroEnderecoData)
+    console.log(cidadeData)
+    console.log(estadoData)
+
 }
 
 //----------------------------------------------- PROTÓTIPO RELATÓRIO -----------------------------------------------
