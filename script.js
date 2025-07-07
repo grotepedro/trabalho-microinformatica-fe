@@ -34,6 +34,35 @@ function preencherEndereco(data) {
   document.getElementById("cidade").value = data.localidade;
   document.getElementById("estado").value = data.uf;
 }
+// CRIAR USUÁRIO
+
+// Constantes que referenciam os elementos do formulário
+const formCadastro = document.getElementById('form-cadastro');
+const nomeInput = document.getElementById('nome');
+const emailInput = document.getElementById('email');
+const cepInput = document.getElementById('cep');
+const logradouroInput = document.getElementById('logradouro');
+const numeroInput = document.getElementById('numeroEndereco');
+const complementoInput = document.getElementById('complemento');
+const cidadeInput = document.getElementById('cidade');
+const estadoInput = document.getElementById('estado');
+const buscarCepBtn = document.getElementById('buscar-cep');
+
+// Constante que coleta todos os valores do formulário
+const obterDadosFormulario = () => {
+  return {
+    nome: nomeInput.value.trim(),
+    email: emailInput.value.trim(),
+    cep: cepInput.value.trim(),
+    endereco: {
+      logradouro: logradouroInput.value.trim(),
+      numero: numeroInput.value.trim(),
+      complemento: complementoInput.value.trim(),
+      cidade: cidadeInput.value.trim(),
+      estado: estadoInput.value.trim()
+    }
+  }
+}
 
 //----------------------------------------------- PROTÓTIPO RELATÓRIO -----------------------------------------------
 
