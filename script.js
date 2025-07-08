@@ -29,10 +29,69 @@ function buscarCEP() {
     });
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+    const submitBtn = document.getElementById("submit-btn");
+    
+    submitBtn.addEventListener("click", cadastrarUsuario);
+});
+
+function cadastrarUsuario() {
+    const nome = document.getElementById("nome").value;
+    const email = document.getElementById("email").value;
+    const telefone = "";
+    const cep = document.getElementById("cep").value;
+    const logradouro = document.getElementById("logradouro").value;
+    const numero = parseInt(document.getElementById("numeroEndereco").value);
+    const complemento = document.getElementById("complemento").value;
+    const bairro = "";
+    const cidade = document.getElementById("cidade").value;
+    const estado = document.getElementById("estado").value;
+  
+    if (!nome || !email || !cep || !logradouro || !numero || !cidade || !estado) {
+      alert("Preencha todos os campos obrigatórios!");
+      return;
+    }
+  
+    const dados = {
+      name: nome,
+      email: email,
+      telefone: telefone,
+      cep: cep,
+      logradouro: logradouro,
+      numero: numero,
+      complemento: complemento,
+      bairro: bairro,
+      cidade: cidade,
+      estado: estado
+    };
+  
+    fetch("https://trabalho-microinformatica-be.onrender.com/CreateUser", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(dados)
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("Erro ao cadastrar usuário");
+      }
+      return response.json();
+    })
+    .then(data => {
+      alert("Usuário cadastrado com sucesso!");
+      console.log("Resposta da API:", data);
+    })
+    .catch(error => {
+      console.error("Erro no cadastro:", error);
+      alert("Falha ao realizar o cadastro!");
+    });
+  }
+
 function preencherEndereco(data) {
-  document.getElementById("logradouro").value = data.logradouro;
-  document.getElementById("cidade").value = data.localidade;
-  document.getElementById("estado").value = data.uf;
+  document.getElementById("logradouro").value = data.logradouro ? data.logradouro : "-";
+  document.getElementById("cidade").value = data.localidade ? data.localidade : "-";
+  document.getElementById("estado").value = data.uf ? data.uf : "-";
 }
 // CRIAR USUÁRIO
 
